@@ -1,10 +1,10 @@
-<mvc:View class="sapUiSizeCompact" controllerName="HeavensKitchen.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt">
+<mvc:View controllerName="HeavensKitchen.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
 	<App>
 		<pages>
 			<Page showHeader="false">
 				<content>
-					<Table items="{/}" growing="true" growingThreshold="2">
+					<Table items="{/}">
 						<headerToolbar>
 							<Toolbar>
 								<content>
