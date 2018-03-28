@@ -1,14 +1,13 @@
 {
 	"_version": "1.7.0",
 	"sap.app": {
-		"id": "HeavensKitchen",
+		"id": "{{projectName}}",
 		"type": "application",
-		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
-		"title": "{{appTitle}}",
-		"description": "{{appDescription}}",
+		"title": "{{projectName}}",
+		"description": "{{projectName}}",
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
@@ -39,7 +38,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "HeavensKitchen.view.Navigation",
+			"viewName": "{{projectName}}.view.Navigation",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -53,19 +52,6 @@
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
-		},
-		"models": {
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "HeavensKitchen.i18n.i18n"
-				}
-			}
-		},
-		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
 		}
 	}
 }

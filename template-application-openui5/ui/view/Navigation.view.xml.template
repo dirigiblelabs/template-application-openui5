@@ -5,7 +5,7 @@
 		   xmlns:html="http://www.w3.org/1999/xhtml"
 		   xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 		   xmlns:mvc="sap.ui.core.mvc"
-		   controllerName="HeavensKitchen.controller.Navigation">
+		   controllerName="{{projectName}}.controller.Navigation">
 	<tnt:ToolPage id="toolPage">
 		<tnt:header>
 			<tnt:ToolHeader>
@@ -70,7 +70,7 @@
 		<tnt:mainContents>
 			<NavContainer id="pageContainer">
 				<pages>
-					<mvc:XMLView id="view" viewName="HeavensKitchen.view.View1"/>
+					<mvc:XMLView id="view" viewName="{{projectName}}.view.View1"/>
 				</pages>
 			</NavContainer>
 		</tnt:mainContents>

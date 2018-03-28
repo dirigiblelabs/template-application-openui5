@@ -3,14 +3,14 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	return Controller.extend("HeavensKitchen.controller.View1", {
+	return Controller.extend("{{projectName}}.controller.View1", {
 		onInit : function(){
 			// instantiate the View
 			var myView = this.getView(); 
 			
 			// create a Model and assign it to the View
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("model/entity.json"); // to load data to the model
+			oModel.loadData("ui/model/entity.json"); // to load data to the model
 			myView.setModel(oModel);
 			
 			//identificate if this is add or edit
@@ -27,6 +27,7 @@ sap.ui.define([
 			this.bAdd = false;
 		},
 		onDeleteItem: function(oEvent){
+			jQuery.sap.require("sap.m.MessageBox");
 			var iId = oEvent.getSource().getBindingContext().getProperty("id");
 			sap.m.MessageBox.confirm("Do you really want to delete this item?", {
 			    title: "Confirm",                                  // default
@@ -46,7 +47,7 @@ sap.ui.define([
 			this.getView().setModel(oModel, "dialog");
 
 			if (!this._oDialog) {
-				this._oDialog = new sap.ui.xmlfragment("HeavensKitchen.view.AddEditDialog", this);
+				this._oDialog = new sap.ui.xmlfragment("{{projectName}}.view.AddEditDialog", this);
 				this.getView().addDependent(this._oDialog);
 			}
 			this._oDialog.open();	

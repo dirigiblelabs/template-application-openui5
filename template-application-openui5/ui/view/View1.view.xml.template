@@ -1,4 +1,4 @@
-<mvc:View class="sapUiSizeCompact" controllerName="HeavensKitchen.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View class="sapUiSizeCompact" controllerName="{{projectName}}.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt">
 	<App>
 		<pages>

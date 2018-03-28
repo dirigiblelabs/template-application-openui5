@@ -8,18 +8,18 @@ sap.ui.define([
 ], function (jQuery, Fragment, Controller, JSONModel, Popover, Button) {
 	"use strict";
 
-	var CController = Controller.extend("HeavensKitchen.controller.Navigation", {
+	var CController = Controller.extend("{{projectName}}.controller.Navigation", {
 		onInit : function() {
 			var toolPage = sap.ui.getCore().byId(this.getView().getId() + "--toolPage");
 			toolPage.setSideExpanded(false);
 			
 			var oModel = new sap.ui.model.json.JSONModel(),
 				oViewModel = new sap.ui.model.json.JSONModel({
-					"name": "HeavensKitchen.view.View2"
+					"name": "{{projectName}}.view.View2"
 				}),
 				myView = this.getView();
 			
-			oModel.loadData("model/modules.json"); // to load data to the model
+			oModel.loadData("ui/model/modules.json"); // to load data to the model
 			myView.setModel(oModel);
 			myView.setModel(oViewModel, "viewModel");
 
@@ -31,9 +31,9 @@ sap.ui.define([
 		//	debugger;
 			//var oViewModel = this.getView().getModel("viewModel");
 			// debugger;
-			//oViewModel.setProperty("/name", "HeavensKitchen.view.View2");
+			//oViewModel.setProperty("/name", "{{projectName}}.view.View2");
 			var view = this.getView().byId("view");
-			view.setViewName("HeavensKitchen.view.View2");
+			view.setViewName("{{projectName}}.view.View2");
 			
 			view.rerender();
 			
@@ -66,7 +66,6 @@ sap.ui.define([
 		},
 
 		onSideNavButtonPress : function() {
-			debugger;
 			var viewId = this.getView().getId();
 			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
 			var sideExpanded = toolPage.getSideExpanded();

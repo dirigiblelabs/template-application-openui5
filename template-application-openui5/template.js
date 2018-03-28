@@ -12,6 +12,50 @@ exports.getTemplate = function() {
 			'location': '/template-application-openui5/data/application.schema.template', 
 			'action': 'generate',
 			'rename': 'data/{{fileName}}.schema'
+		}, {
+			'location': '/template-application-openui5/index.html.template', 
+			'action': 'generate',
+			'rename': 'index.html'
+		}, {
+			'location': '/template-application-openui5/ui/view/Navigation.view.xml.template', 
+			'action': 'generate',
+			'rename': 'ui/view/Navigation.view.xml'
+		}, {
+			'location': '/template-application-openui5/ui/view/View1.view.xml.template', 
+			'action': 'generate',
+			'rename': 'ui/view/View1.view.xml'
+		},  {
+			'location': '/template-application-openui5/ui/view/AddEditDialog.fragment.xml.template', 
+			'action': 'generate',
+			'rename': 'ui/view/AddEditDialog.fragment.xml'
+		}, {
+			'location': '/template-application-openui5/ui/controller/Navigation.controller.js.template', 
+			'action': 'generate',
+			'rename': 'ui/controller/Navigation.controller.js'
+		}, {
+			'location': '/template-application-openui5/ui/controller/View1.controller.js.template', 
+			'action': 'generate',
+			'rename': 'ui/controller/View1.controller.js'
+		}, {
+			'location': '/template-application-openui5/ui/Component.js.template', 
+			'action': 'generate',
+			'rename': 'ui/Component.js'
+		}, {
+			'location': '/template-application-openui5/ui/manifest.json.template', 
+			'action': 'generate',
+			'rename': 'ui/manifest.json'
+		}, {
+			'location': '/template-application-openui5/ui/model/models.js.template', 
+			'action': 'generate',
+			'rename': 'ui/model/models.js'
+		}, {
+			'location': '/template-application-openui5/ui/model/entity.json.template', 
+			'action': 'generate',
+			'rename': 'ui/model/entity.json'
+		}, {
+			'location': '/template-application-openui5/ui/model/modules.json.template', 
+			'action': 'generate',
+			'rename': 'ui/model/modules.json'
 		}],
 		'parameters': []
 	};

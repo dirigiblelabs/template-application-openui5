@@ -5,22 +5,20 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta charset="UTF-8">
 
-		<title>HeavensKitchen</title>
+		<title>{{projectName}}</title>
 
 		<script id="sap-ui-bootstrap"
 			src="https://openui5.hana.ondemand.com/1.52.2/resources/sap-ui-core.js"
 			data-sap-ui-libs="sap.m"
 			data-sap-ui-theme="sap_belize"
 			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"HeavensKitchen": "./"}'>
+			data-sap-ui-resourceroots='{"{{projectName}}": "./ui"}'>
 		</script>
-
-		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script>
 			sap.ui.getCore().attachInit(function() {
                 sap.ui.xmlview({
-                   viewName : "HeavensKitchen.view.Navigation"
+                   viewName : "{{projectName}}.view.Navigation"
                 }).placeAt("content");
 			});
 		</script>
