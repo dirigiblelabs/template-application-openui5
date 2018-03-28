@@ -70,7 +70,9 @@
 		<tnt:mainContents>
 			<NavContainer id="pageContainer">
 				<pages>
-					<mvc:XMLView id="view" viewName="{{projectName}}.view.View1"/>
+					{{#uiManageModels}}
+						<mvc:XMLView id="{{fileName}}" viewName="{{projectName}}.view.{{fileName}}"/>
+					{{/uiManageModels}}
 				</pages>
 			</NavContainer>
 		</tnt:mainContents>

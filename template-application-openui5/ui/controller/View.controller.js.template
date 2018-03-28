@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Controller) {
 	"use strict";
 
-	return Controller.extend("{{projectName}}.controller.View1", {
+	return Controller.extend("{{projectName}}.controller.{{fileName}}", {
 		onInit : function(){
 			// instantiate the View
 			var myView = this.getView(); 

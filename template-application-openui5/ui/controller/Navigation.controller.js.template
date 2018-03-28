@@ -10,9 +10,6 @@ sap.ui.define([
 
 	var CController = Controller.extend("{{projectName}}.controller.Navigation", {
 		onInit : function() {
-			var toolPage = sap.ui.getCore().byId(this.getView().getId() + "--toolPage");
-			toolPage.setSideExpanded(false);
-			
 			var oModel = new sap.ui.model.json.JSONModel(),
 				oViewModel = new sap.ui.model.json.JSONModel({
 					"name": "{{projectName}}.view.View2"
