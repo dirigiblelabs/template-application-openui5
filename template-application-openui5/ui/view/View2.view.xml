@@ -4,11 +4,11 @@
 		<pages>
 			<Page showHeader="false">
 				<content>
-					<Table items="{/}" growing="true" growingThreshold="2">
+					<Table items="{/}">
 						<headerToolbar>
 							<Toolbar>
 								<content>
-									<Title text="Products" level="H2"/>
+									<Title text="Nasko" level="H2"/>
 										<ToolbarSpacer />
 										<Button id="addBtn"
 											press="onAddItem"

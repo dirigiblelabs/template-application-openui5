@@ -5,10 +5,6 @@ sap.ui.define([
 
 	return Controller.extend("HeavensKitchen.controller.View1", {
 		onInit : function(){
-			//TODO remove this and set it to the body in the index.html
-			var element = document.getElementsByTagName("BODY")[0];
-    		element.classList.add("sapUiSizeCompact");
-			
 			// instantiate the View
 			var myView = this.getView(); 
 			

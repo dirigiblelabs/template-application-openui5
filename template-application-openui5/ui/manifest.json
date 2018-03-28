@@ -39,7 +39,7 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "HeavensKitchen.view.View1",
+			"viewName": "HeavensKitchen.view.Navigation",
 			"type": "XML"
 		},
 		"dependencies": {
