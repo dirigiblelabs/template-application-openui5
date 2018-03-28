@@ -14,13 +14,30 @@ sap.ui.define([
 				oViewModel = new sap.ui.model.json.JSONModel({
 					"name": "{{projectName}}.view.View2"
 				}),
+				oEntitiesModel = new sap.ui.model.json.JSONModel([
+					{{#uiManageModels_}}
+					{
+						"displayName": "{{value.name}}",
+						"entityName": "{{value.name}}"
+					}{{^last}},{{/last}}
+					{{/uiManageModels_}}
+				]),
+
 				myView = this.getView();
-			
+
 			oModel.loadData("ui/model/modules.json"); // to load data to the model
 			myView.setModel(oModel);
 			myView.setModel(oViewModel, "viewModel");
+			myView.setModel(oEntitiesModel, "entities");
 
 			this._setToggleButtonTooltip(sap.ui.Device.system.desktop);
+		},
+
+		onSelectTab: function(oEvent) {
+			var oSelectedItem = oEvent.getParameter("selectedItem");
+			var sEntityName = oSelectedItem.getKey();
+			this.getOwnerComponent().getRouter().navTo(sEntityName);
+			
 		},
 
 		onItemSelect : function(oEvent) {

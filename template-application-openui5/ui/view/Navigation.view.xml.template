@@ -18,28 +18,23 @@
 					</layoutData>
 				</Button>
 				<ToolbarSpacer width="20px" />
-				<Button text="Products" type="Transparent">
-					<layoutData>
-						<OverflowToolbarLayoutData priority="Low" />
-					</layoutData>
-				</Button>
-				<Button text="Staff" type="Transparent">
-					<layoutData>
-						<OverflowToolbarLayoutData priority="Low" />
-					</layoutData>
-				</Button>
-				<tnt:ToolHeaderUtilitySeparator />
-				<ToolbarSpacer>
-					<layoutData>
-						<OverflowToolbarLayoutData minWidth="20px" />
-					</layoutData>
-				</ToolbarSpacer>
-				<Button text="Alan Smith" type="Transparent" press="handleUserNamePress">
-					<layoutData>
-						<OverflowToolbarLayoutData />
-					</layoutData>
-				</Button>
-
+				<IconTabHeader id="iconTabHeader"
+        			selectedKey="invalidKey"
+        			select="onSelectTab"
+        			showOverflowSelectList="true"
+        			backgroundDesign="Transparent"
+                    items="{entities>/}"
+        			mode="Inline">
+        			<layoutData>
+        				<OverflowToolbarLayoutData
+        					priority="NeverOverflow"
+        					shrinkable="true" />
+        			</layoutData>
+        			<items>
+        				<IconTabFilter key="{entities>entityName}" text="{entities>displayName}">
+        				</IconTabFilter>
+        			</items>
+        		</IconTabHeader>
 			</tnt:ToolHeader>
 		</tnt:header>
 		<tnt:sideContent>
@@ -69,11 +64,6 @@
 		</tnt:sideContent>
 		<tnt:mainContents>
 			<NavContainer id="pageContainer">
-				<pages>
-					{{#uiManageModels}}
-						<mvc:XMLView id="{{fileName}}" viewName="{{projectName}}.view.{{fileName}}"/>
-					{{/uiManageModels}}
-				</pages>
 			</NavContainer>
 		</tnt:mainContents>
 	</tnt:ToolPage>

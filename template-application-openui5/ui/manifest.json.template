@@ -52,6 +52,40 @@
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
-		}
+		},
+		"routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "{{projectName}}.view",
+                "controlId": "pageContainer",
+                "controlAggregation": "pages",
+                "transition": "slide",
+                "bypassed": {
+                	"target": ["notFound"]
+                },
+                "async": true
+            },
+
+            "routes": [
+            {{#uiManageModels_}}
+                {
+                    "pattern": "{{value.name}}",
+                    "name": "{{value.name}}",
+                    "target": "{{value.name}}"
+                }{{^last}},{{/last}}
+			{{/uiManageModels_}}
+            ],
+
+            "targets": {
+            	{{#uiManageModels_}}
+                "{{value.name}}": {
+                	"viewName": "{{value.name}}",
+                	"viewId": "{{value.name}}",
+                    "viewLevel": 1
+                }{{^last}},{{/last}}
+            	{{/uiManageModels_}}
+            }
+        }
 	}
 }

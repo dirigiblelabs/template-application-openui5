@@ -10,7 +10,7 @@ sap.ui.define([
 			
 			// create a Model and assign it to the View
 			var oModel = new sap.ui.model.json.JSONModel();
-			oModel.loadData("ui/model/entity.json"); // to load data to the model
+			oModel.loadData("../../js/{{projectName}}/api/{{fileName}}.js"); // to load data to the model
 			myView.setModel(oModel);
 			
 			//identificate if this is add or edit
