@@ -77,7 +77,7 @@ sap.ui.define([
 		},
 		deleteItem: function(iId){
 			var oModel = this.getView().getModel(),
-				aData =	oModel.getProperty("/ProductCollection"),
+				aData =	oModel.getProperty("/"),
 				iIndex = aData.findIndex(function(oObject){
 					return oObject["id"] === iId;
 				});
