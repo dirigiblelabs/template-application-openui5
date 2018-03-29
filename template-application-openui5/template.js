@@ -11,7 +11,7 @@ exports.getTemplate = function() {
 		}, {
 			'location': '/template-application-openui5/data/application.schema.template', 
 			'action': 'generate',
-			'rename': 'data/{{fileName}}.schema'
+			'rename': 'data/{{fileNameBase}}.schema'
 		}, {
 			'location': '/template-application-openui5/index.html.template', 
 			'action': 'generate',
