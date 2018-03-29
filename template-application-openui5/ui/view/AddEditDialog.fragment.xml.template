@@ -3,13 +3,13 @@
 		xmlns:l="sap.ui.layout"
 		xmlns:core="sap.ui.core">
 	<Dialog
-			title="Settings"
+			title="Manage data"
 			class="sapUiPopupWithPadding"
 			contentWidth="350px">
 		<content>
 			<VBox class="sapUiTinyMarginTop">
 				[[#properties]]
-				<Label text="[[name]]:"/>
+				<Label text="[[widgetLabel]]:"/>
 				<Input value="{dialog>/[[name]]}"/>
 				[[/properties]]
 			</VBox>

@@ -11,14 +11,11 @@ sap.ui.define([
 	var CController = Controller.extend("{{projectName}}.controller.Navigation", {
 		onInit : function() {
 			var oModel = new sap.ui.model.json.JSONModel(),
-				oViewModel = new sap.ui.model.json.JSONModel({
-					"name": "{{projectName}}.view.View2"
-				}),
 				oEntitiesModel = new sap.ui.model.json.JSONModel([
 					{{#uiManageModels_}}
 					{
-						"displayName": "{{value.name}}",
-						"entityName": "{{value.name}}"
+						"displayName": "{{value.menuLabel}}",
+						"entityName": "{{value.menuKey}}"
 					}{{^last}},{{/last}}
 					{{/uiManageModels_}}
 				]),
@@ -30,7 +27,6 @@ sap.ui.define([
 
 			oModel.loadData("ui/model/modules.json"); // to load data to the model
 			myView.setModel(oModel);
-			myView.setModel(oViewModel, "viewModel");
 			myView.setModel(oEntitiesModel, "entities");
 
 			this._setToggleButtonTooltip(sap.ui.Device.system.desktop);
@@ -38,7 +34,7 @@ sap.ui.define([
 			var oRouter = this.getOwnerComponent().getRouter();
             oRouter.getRoute("home").attachPatternMatched(this._onRouteMatchedDefault, this);
             {{#uiManageModels_}}
-            oRouter.getRoute("{{value.name}}").attachPatternMatched(this._onRouteMatched, this);
+            oRouter.getRoute("{{value.menuKey}}").attachPatternMatched(this._onRouteMatched, this);
             {{/uiManageModels_}}
 		},
 
@@ -50,8 +46,8 @@ sap.ui.define([
 		},
 
 		onSideNavButtonPress : function() {
-			var viewId = this.getView().getId();
-			var toolPage = sap.ui.getCore().byId(viewId + "--toolPage");
+			var oView = this.getView();
+			var toolPage = oView.byId("toolPage");
 			var sideExpanded = toolPage.getSideExpanded();
 
 			this._setToggleButtonTooltip(sideExpanded);
@@ -76,7 +72,7 @@ sap.ui.define([
 		_onRouteMatchedDefault: function (oEvent) {
         	{{#uiManageModels_}}
         	{{#first}}
-            this.getOwnerComponent().getRouter().navTo("{{value.name}}");
+            this.getOwnerComponent().getRouter().navTo("{{value.menuKey}}");
             {{/first}}
             {{/uiManageModels_}}
         },
