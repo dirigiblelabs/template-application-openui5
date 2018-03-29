@@ -5,19 +5,13 @@
 	<Dialog
 			title="Settings"
 			class="sapUiPopupWithPadding"
-			contentWidth="350px"
-			id="AppSettingsDialog">
+			contentWidth="350px">
 		<content>
 			<VBox class="sapUiTinyMarginTop">
-					<Label text="Name:"/>
-					<Input placeholder="Enter name" value="{dialog>/name}"/>
-
-					<Label text="Description:"/>
-					<Input placeholder="Enter description" value="{dialog>/description}"/>
-					
-					<Label text="Price:"/>
-					<Input placeholder="Enter price" value="{dialog>/price}" type="Number"/>
-
+				[[#properties]]
+				<Label text="[[name]]:"/>
+				<Input value="{dialog>/[[name]]}"/>
+				[[/properties]]
 			</VBox>
 		</content>
 		<beginButton>
