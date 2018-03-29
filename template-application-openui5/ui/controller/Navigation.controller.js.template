@@ -34,6 +34,12 @@ sap.ui.define([
 			myView.setModel(oEntitiesModel, "entities");
 
 			this._setToggleButtonTooltip(sap.ui.Device.system.desktop);
+			
+			var oRouter = this.getOwnerComponent().getRouter();
+            oRouter.getRoute("home").attachPatternMatched(this._onRouteMatchedDefault, this);
+            {{#uiManageModels_}}
+            oRouter.getRoute("{{value.name}}").attachPatternMatched(this._onRouteMatched, this);
+            {{/uiManageModels_}}
 		},
 
 		onSelectTab: function(oEvent) {
@@ -65,7 +71,19 @@ sap.ui.define([
 		onNavigationListSelect: function(oEvent) {
 			var url = oEvent.getParameter("item").getKey();
 			window.open(url, '_blank');
-		}
+		},
+		
+		_onRouteMatchedDefault: function (oEvent) {
+        	{{#uiManageModels_}}
+        	{{#first}}
+            this.getOwnerComponent().getRouter().navTo("{{value.name}}");
+            {{/first}}
+            {{/uiManageModels_}}
+        },
+
+        _onRouteMatched: function (oEvent) {
+            this.getView().byId("entitiesMenu").setSelectedKey(oEvent.getParameter("name"));
+        }
 
 	});
 

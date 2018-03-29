@@ -18,8 +18,7 @@
 					</layoutData>
 				</Button>
 				<ToolbarSpacer width="20px" />
-				<IconTabHeader id="iconTabHeader"
-        			selectedKey="invalidKey"
+				<IconTabHeader id="entitiesMenu"
         			select="onSelectTab"
         			showOverflowSelectList="true"
         			backgroundDesign="Transparent"

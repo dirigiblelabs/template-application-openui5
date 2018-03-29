@@ -68,6 +68,10 @@
             },
 
             "routes": [
+                {
+                    "pattern": "",
+                    "name": "home"
+                },
             {{#uiManageModels_}}
                 {
                     "pattern": "{{value.name}}",
@@ -82,7 +86,7 @@
                 "{{value.name}}": {
                 	"viewName": "{{value.name}}",
                 	"viewId": "{{value.name}}",
-                    "viewLevel": 1
+                    "viewLevel": {{index}}
                 }{{^last}},{{/last}}
             	{{/uiManageModels_}}
             }
