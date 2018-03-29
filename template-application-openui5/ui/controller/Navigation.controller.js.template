@@ -23,7 +23,10 @@ sap.ui.define([
 					{{/uiManageModels_}}
 				]),
 
-				myView = this.getView();
+				myView = this.getView(),
+				toolPage = myView.byId("toolPage");
+			
+			toolPage.setSideExpanded(false);
 
 			oModel.loadData("ui/model/modules.json"); // to load data to the model
 			myView.setModel(oModel);
@@ -38,45 +41,6 @@ sap.ui.define([
 			var sEntityName = oSelectedItem.getKey();
 			this.getOwnerComponent().getRouter().navTo(sEntityName);
 			
-		},
-
-		onItemSelect : function(oEvent) {
-			// 			var item = oEvent.getParameter('item');
-		//	debugger;
-			//var oViewModel = this.getView().getModel("viewModel");
-			// debugger;
-			//oViewModel.setProperty("/name", "{{projectName}}.view.View2");
-			var view = this.getView().byId("view");
-			view.setViewName("{{projectName}}.view.View2");
-			
-			view.rerender();
-			
-			// var item = oEvent.getParameter('item');
-			// var viewId = this.getView().getId();
-			// sap.ui.getCore().byId(viewId + "--pageContainer").to(viewId + "--" + item.getKey());
-		},
-
-		handleUserNamePress: function (event) {
-			var popover = new Popover({
-				showHeader: false,
-				placement: sap.m.PlacementType.Bottom,
-				content:[
-					new Button({
-						text: 'Feedback',
-						type: sap.m.ButtonType.Transparent
-					}),
-					new Button({
-						text: 'Help',
-						type: sap.m.ButtonType.Transparent
-					}),
-					new Button({
-						text: 'Logout',
-						type: sap.m.ButtonType.Transparent
-					})
-				]
-			}).addStyleClass('sapMOTAPopover sapTntToolHeaderPopover');
-
-			popover.openBy(event.getSource());
 		},
 
 		onSideNavButtonPress : function() {
@@ -96,6 +60,11 @@ sap.ui.define([
 			} else {
 				toggleButton.setTooltip('Small Size Navigation');
 			}
+		},
+		
+		onNavigationListSelect: function(oEvent) {
+			var url = oEvent.getParameter("item").getKey();
+			window.open(url, '_blank');
 		}
 
 	});
